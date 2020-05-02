@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Login GitHub Registry
-        run: docker login docker.pkg.github.com -u traPtitech -p ${{ secrets.GITHUB_TOKEN }}
+        run: docker login docker.pkg.github.com -u traPtitech -p ${{ secrets.GH_ACCESS_TOKEN}}
       - name: Build Image
         run: docker build -t docker.pkg.github.com/series2/test/${IMAGE_NAME}:${IMAGE_TAG} .
       - name: Push image to GitHub Registry
