@@ -6,7 +6,7 @@ on:
       - master
 
 env:
-  IMAGE_NAME: docker-pkg2
+  IMAGE_NAME: Docker-pkg2
   IMAGE_TAG: latest
 
 jobs:
@@ -17,6 +17,6 @@ jobs:
       - name: Login GitHub Registry
         run: docker login docker.pkg.github.com -u traPtitech -p ${{ secrets.GITHUB_TOKEN}}
       - name: Build Image
-        run: docker build -t docker.pkg.github.com/series2/test/${IMAGE_NAME}:${IMAGE_TAG} .
+        run: docker build -t docker.pkg.github.com/series2/Test/${IMAGE_NAME}:${IMAGE_TAG} .
       - name: Push image to GitHub Registry
-        run: docker push docker.pkg.github.com/series2/test/${IMAGE_NAME}:${IMAGE_TAG}
+        run: docker push docker.pkg.github.com/series2/Test/${IMAGE_NAME}:${IMAGE_TAG}
